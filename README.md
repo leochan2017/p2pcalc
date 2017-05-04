@@ -1,21 +1,14 @@
-# p2pcalc
+# 理财收益计算器
+还你真实的数值
 
-> A Vue.js project
+## 设计初衷
+一般的理财产品大多都不像银行定期那样当天存款当天计息，到期就还本还息。一般的理财产品都有各种XX期，而这期间的本金是不计算收益的。
 
-## Build Setup
+假设你买了某某理财10万元，号称91天的年化收益率是3.1%。假设认购期5天，到期后提现又5天，那么你实际就被占用了10天的资金所以收益就是:772.88*365/(101*10万)=2.79%。绝对收益是772.88/10万=0.7728%。
 
-``` bash
-# install dependencies
-npm install
+如果期限较长的理财产品这些认购期，清算期这样的时间也许可以忽略不计，但是对于7天或者一个月以内的短期理财产品来说，这个时间就有非常坑爹的影响了。比如银行的7天理财产品，号称年化收益率是1.7%，但至少要占用8天资金，1.7%*7/8=1.48%，已经跟银行的7天通知存款差不多了，而银行通知存款，无论是方便程度还是稳定可靠程度，都要远高于一般有风险的理财产品的。
 
-# serve with hot reload at localhost:8080
-npm run dev
+所以看年化收益率，绝对不是看他声称的数字，而要看实际的收入数字。这个时候，我感觉你可能需要用这个计算器来看出来真实的数值了
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 预览地址
+http://www.leojs.com/p2pcalc/

@@ -17,7 +17,6 @@
 </template>
 <script>
 import {
-    ViewBox,
     Tabbar,
     TabbarItem
 } from 'vux';
@@ -25,18 +24,17 @@ import {
 export default {
     name: 'app',
     components: {
-        ViewBox,
         Tabbar,
         TabbarItem
     }
 }
 </script>
-<style>
+<style lang="less">
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /*color: #2c3e50;*/
+    color: #2c3e50;
 }
 
 body {
@@ -72,6 +70,7 @@ a:link {
 .vux-pop-in-leave-active {
     will-change: transform;
     transition: all 500ms;
+    width: 100%;
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
@@ -96,5 +95,44 @@ a:link {
 .vux-pop-in-leave-active {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
+}
+
+
+/*解决cell的高度太高了的问题 Start */
+
+.leo-cell {
+    line-height: 0;
+}
+
+
+/*解决cell的高度太高了的问题 End */
+
+
+/*cell右侧提示文字的距离*/
+
+.leo-tips-right {
+    padding-left: 10px;
+}
+
+
+/*说明页弹出的样式*/
+
+.leo-popup {
+    p {
+        padding: 3px 8px;
+    }
+}
+
+@import '~vux/src/styles/close';
+
+.leo-paymoney-dialog {
+    .weui-dialog {
+        border-radius: 8px;
+        padding-bottom: 8px;
+    }
+    .vux-close {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
 }
 </style>
